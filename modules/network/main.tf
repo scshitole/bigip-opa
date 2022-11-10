@@ -55,7 +55,7 @@ resource "aws_instance" "bigip" {
 
   lifecycle {
     precondition {
-      condition     = data.aws_ec2_instance_type.bigip.default_cores <= 2
+      condition     = data.aws_ec2_instance_type.bigip.default_cores <= 4
       error_message = "Change the value of bigip_instance_type to a type that has 4 or fewer cores to avoid over provisioning."
     }
   }
